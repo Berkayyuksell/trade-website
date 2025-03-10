@@ -7,11 +7,16 @@ declare global {
 }
 
 // Geliştirme ortamında birden fazla PrismaClient örneği oluşmasını önle
-const prisma = global.prisma || new PrismaClient({
-  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-});
+const prismaClientSingleton = () => {
+  return new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+  });
+};
+
+// globalThis kullanarak PrismaClient'ı global olarak tanımla
+const prisma = globalThis.prisma ?? prismaClientSingleton();
 
 // Geliştirme ortamında global değişkene ata
-if (process.env.NODE_ENV !== 'production') global.prisma = prisma;
+if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;
 
 export default prisma; 
