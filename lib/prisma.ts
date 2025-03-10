@@ -1,9 +1,17 @@
 import { PrismaClient } from '@prisma/client';
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+// PrismaClient'ı global olarak tanımla
+declare global {
+  // eslint-disable-next-line no-var
+  var prisma: PrismaClient | undefined;
+}
 
-export const prisma = globalForPrisma.prisma || new PrismaClient();
+// Geliştirme ortamında birden fazla PrismaClient örneği oluşmasını önle
+const prisma = global.prisma || new PrismaClient({
+  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+});
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+// Geliştirme ortamında global değişkene ata
+if (process.env.NODE_ENV !== 'production') global.prisma = prisma;
 
 export default prisma; 
