@@ -1,3 +1,14 @@
+
+<img width="1470" alt="Ekran Resmi 2025-03-11 16 27 08" src="https://github.com/user-attachments/assets/333d77c6-3b0f-4b47-8684-170a86930bc8" />
+
+<img width="1470" alt="Ekran Resmi 2025-03-11 16 28 10" src="https://github.com/user-attachments/assets/1467a4ec-0e09-4069-911e-8174061dc337" />
+
+
+<img width="1470" alt="Ekran Resmi 2025-03-11 16 28 25" src="https://github.com/user-attachments/assets/fe12b745-5ba9-4270-bfd5-dcaadf4d955d" />
+
+<img width="1470" alt="Ekran Resmi 2025-03-11 16 28 42" src="https://github.com/user-attachments/assets/d6a6bd13-4c2f-4e0d-aa69-1376caaa23c9" />
+
+
 # Kaldıraçlı Trading Platformu
 
 Modern ve kullanıcı dostu bir kaldıraçlı trading platformu. Next.js, TypeScript, Tailwind CSS, Shadcn UI ve PostgreSQL kullanılarak geliştirilmiştir.
